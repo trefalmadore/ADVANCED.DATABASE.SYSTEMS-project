@@ -1,0 +1,30 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scrp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongodb": "^4.9.1",
+    "mongoose": "^6.5.4",
+    "node-html-parser": "^5.4.2",
+    "playwright": "^1.25.1",
+    "pretty": "^2.0.0",
+    "xmldom": "^0.6.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.25.1",
+    "nodemon": "^2.0.19"
+  }
+}

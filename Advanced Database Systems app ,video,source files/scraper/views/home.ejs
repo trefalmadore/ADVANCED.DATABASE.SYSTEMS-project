@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mars Facts And Info</title>
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+   crossorigin="anonymous">
+</head>
+<body class='text-white'style="background-color:black;" >
+  <div class="container">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center" style="background-image: url(https://cdn.mos.cms.futurecdn.net/kCbvedK262UGLXCLFeW5oS-650-80.jpg); background-size: 100%; height: 100%;">
+        <h1 class="display-4" >Mars Facts And Info</h1>
+        <a class="btn btn-lg text-white" style="background-color:#2a0ec1;" href="/data" role="button">Scrape New
+            Data</a>
+    </div>
+    <!---Mars News scraping-->
+    <div class="container">
+        <h2>Mars News</h2>
+        <h4 style="color:aqua"><%= title %></h4>
+        <p><%= parag %></p>
+    </div>
+
+    <div class="container">
+      <div class='row'>
+        <div class="col-lg-8 col-md-8 col-sm-6 col-xm-12">
+        <h3>Mars Image</h3>
+        <img src="<%= img %>" style="max-width:100%; max-height: auto;" alt="mars image">
+        
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xm-12">
+          <!-- Table -->
+          <br>
+          <h5>Mars Facts</h5>
+          <!-- <table>{{ data.mars_facts|safe}}</table> -->
+          <table border="1" class="dataframe">
+            <thead>
+              <tr style="text-align: right;">
+                <th></th>
+                <th>Mars-Earth Comparison</th>
+                <th>Mars</th>
+                <th>Earth</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>0</th>
+                <td>Equatorial Diameter:</td>
+                <td>6,792 km</td>
+                <td>12,756 km</td>
+              </tr>
+              <tr>
+                <th>1</th>
+                <td>Polar Diameter:</td>
+                <td>6,752 km</td>
+                <td>12,714 km</td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td>Mass:</td>
+                <td>6.39 × 10^23 kg (0.11 Earths)</td>
+                <td>5.97 × 10^24 kg</td>
+              </tr>
+              <tr>
+                <th>3</th>
+                <td>Moons:</td>
+                <td>2 (Phobos &amp; Deimos)</td>
+                <td>1 (The Moon)</td>
+              </tr>
+              <tr>
+                <th>4</th>
+                <td>Orbit Distance:</td>
+                <td>227,943,824 km (1.38 AU)</td>
+                <td>149,598,262 km (1 AU)</td>
+              </tr>
+              <tr>
+                <th>5</th>
+                <td>Orbit Period:</td>
+                <td>687 days (1.9 years)</td>
+                <td>365.24 days</td>
+              </tr>
+              <tr>
+                <th>6</th>
+                <td>Surface Temperature:</td>
+                <td>-87 to -5 °C</td>
+                <td>-88 to 58°C</td>
+              </tr>
+              <tr>
+                <th>7</th>
+                <td>First Record:</td>
+                <td>2nd millennium BC</td>
+                <td>NaN</td>
+              </tr>
+              <tr>
+                <th>8</th>
+                <td>Recorded By:</td>
+                <td>Egyptian astronomers</td>
+                <td>NaN</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div><!---container for image and table closed-->
+    <h3 style="padding-top:30px; text-align: center;">Mars Hemispheres</h3>
+    <div class='card-deck'>
+      <div class='col-md-12'>
+          <div class="row">
+            <% for(var l = 0; l < fact.length; l++) {%>
+              <div class="col-md-6">
+                  <div class="card text-white bg-dark" style="margin: 30px;">
+                      <img class="card-img-top" src="<%= fact[l].img_url %>" />
+                      <div class="card-body">
+                          <p class="card-text"><%= fact[l].title %></p>
+                      </div>
+                  </div>
+              </div>
+            <% } %>
+          </div>
+      </div>
+    </div>
+
+
+  </div> <!---body->container closed-->
+</body>
+</html>
